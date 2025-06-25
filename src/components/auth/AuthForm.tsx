@@ -1,4 +1,10 @@
+import anthropic
 
+client = anthropic.Anthropic()
+
+client.beta.files.upload(
+    file=("document.pdf", open("/path/to/document.pdf", "rb"), "application/pdf"),
+)
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
