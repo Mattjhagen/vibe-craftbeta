@@ -1,6 +1,6 @@
 # 🚀 VibeCode – Pre-Release Access
 
-![VibeCode Logo](assets/file_000000005d4461f7bb33db07d38922c5.png)
+![VibeCode Logo](assets/D92B5028-E778-4B4F-9807-FF3AA6E0BCF7.png)
 
 
 **Imagine describing an idea — and watching it become a real, installable app in seconds.**  
