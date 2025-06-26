@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,24 +5,34 @@ import { Plus, FileText, Globe, Settings, LogOut } from 'lucide-react';
 import ProjectCreator from './ProjectCreator';
 import ProjectList from './ProjectList';
 
+interface Project {
+  id: string;
+  name: string;
+  type: 'resume' | 'prompt';
+  url: string;
+  status: 'building' | 'deployed' | 'error';
+  createdAt: string;
+  description?: string;
+}
+
 const Dashboard = () => {
   const [showCreator, setShowCreator] = useState(false);
-  const [projects, setProjects] = useState([
+  const [projects, setProjects] = useState<Project[]>([
     {
       id: '1',
       name: 'My Portfolio',
-      type: 'resume',
+      type: 'resume' as const,
       url: 'https://myportfolio.vibecode.app',
-      status: 'deployed',
+      status: 'deployed' as const,
       createdAt: '2024-01-15'
     }
   ]);
 
   const handleCreateProject = (project: any) => {
-    const newProject = {
+    const newProject: Project = {
       ...project,
       id: Date.now().toString(),
-      status: 'building',
+      status: 'building' as const,
       createdAt: new Date().toISOString().split('T')[0]
     };
     setProjects([newProject, ...projects]);
